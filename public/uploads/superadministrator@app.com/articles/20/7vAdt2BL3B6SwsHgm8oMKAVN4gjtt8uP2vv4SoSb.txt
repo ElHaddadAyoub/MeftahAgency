@@ -1,0 +1,24 @@
+require('./bootstrap');
+
+
+window.Vue = require('vue');
+
+
+Vue.component('example-component', require('./components/ExampleComponent.vue'));
+
+const app = new Vue({
+	el: '#app',
+	data:  {
+		newData: {'mail': '', 'username': ''},
+		mssg : '123'
+
+	},
+	methods: {
+		createItem: function{
+			alert('click please');
+		}
+
+
+	}
+
+});
