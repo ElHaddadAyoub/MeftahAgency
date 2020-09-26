@@ -43,7 +43,7 @@
                   </p>
                 </div>
                 <span>
-                  <router-link :to="`/soloBlog/${blog.id}`" class="ready-btn">Read more</router-link>
+                  <router-link :to="`/soloBlog/${blog.id}`" class="ready-btn">lire plus</router-link>
                 </span>
               </div>
               <!-- Start single blog -->

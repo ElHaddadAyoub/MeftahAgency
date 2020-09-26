@@ -32,6 +32,7 @@ Route::post('/loginAdmin','AdminController@log');
 
 Route::group(['middleware' => ['auth']], function () {
 Route::post('/addcat','CategoryController@addCategory');
+Route::post('/addContact', 'CategoryController@addContact');
 //Route::get('/getcat','CategoryController@getAllCategory');
 Route::get('category','CategoryController@all_category');
 Route::get('category/{id}','CategoryController@delete_category');
@@ -41,19 +42,22 @@ Route::get('chercheCategorie','CategoryController@cherche_categorie');
 
 //Article
 Route::get('article','ArticleController@all_Article');
- Route::post('/addArticle','ArticleController@add_article');
- Route::get('article/{id}','ArticleController@delete_article');
- Route::get('editArticle/{id}','ArticleController@edit_article');
- Route::post('updateArticle/{id}','ArticleController@update_article');
- Route::get('chercheArticleadmin','ArticleController@cherche_article');
- //subcategory
- Route::get('subcategory','SubcategoryController@all_subcategory');
- Route::get('subcategory/{category}','SubcategoryController@all_subcategoryByCategory');
- Route::post('/addSubcategory','SubcategoryController@add_subcategory');
- Route::get('editSubcategory/{id}','SubcategoryController@edit_subcategory');
- Route::post('updateSubcategory/{id}','SubcategoryController@update_subcategory');
- Route::get('subcategory/{id}','SubcategoryController@delete_subcategory');
- Route::get('chercheSubcategory','SubcategoryController@cherche_subcategory');
+Route::post('/addArticle','ArticleController@add_article');
+Route::get('article/{id}','ArticleController@delete_article');
+Route::get('favoris/{id}','ArticleController@ajouter_favoris');
+Route::get('editArticle/{id}','ArticleController@edit_article');
+Route::post('updateArticle/{id}','ArticleController@update_article');
+Route::get('chercheArticleadmin','ArticleController@cherche_article');
+//subcategory
+Route::get('subcategory','SubcategoryController@all_subcategory');
+
+Route::get('subcategory/{category}','SubcategoryController@all_subcategoryByCategory');
+Route::get('subcategory/{id}','SubcategoryController@delete_subcategory');
+Route::post('/addSubcategory','SubcategoryController@add_subcategory');
+Route::get('editSubcategory/{id}','SubcategoryController@edit_subcategory');
+Route::post('updateSubcategory/{id}','SubcategoryController@update_subcategory');
+
+Route::get('chercheSubcategory','SubcategoryController@cherche_subcategory');
 //Users
 Route::get('users','UserController@all_users');
 Route::get('user/{id}','UserController@delete_user');
@@ -64,12 +68,13 @@ Route::get('chercheUser','UserController@cherche_user');
 Route::get('regions','regionController@getAllRegion');
 Route::get('ville/{region}','villeController@all_VilleByregion');
 Route::get('/countArticle','ArticleController@counter');
-Route::get('blog/{id}','BlogController@delete_blog');
+Route::get('deleteblog/{id}','BlogController@delete_blog');
 
 
 Route::post('/addAnnonce','PostArticleController@add_annonce');
 Route::get('/annonceParUser','PostArticleController@annonces_by_user');
-
+Route::get('/blogParUser','PostArticleController@blog_by_user');
+Route::get('/FavorisParUser','PostArticleController@getFavoris');
 Route::get('/editAnnonces/{id}','PostArticleController@editer_annonce');
 Route::post('/updateAnnonce/{id}','PostArticleController@update_annonce');
 Route::get('/UserProfile','PostArticleController@userProfile')->middleware('auth');

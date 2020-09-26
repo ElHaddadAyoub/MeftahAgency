@@ -85,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <router-link name='admin' :to="{name:'admin'}" class="nav-link">
                 <i class="fas fa-chart-line"></i>
                   <p>
-                    Dashboard
+                    Tableau de bord
                   </p>
                 </router-link>
               </li>
@@ -101,7 +101,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <router-link to="/Listsubcategory" class="nav-link">
               <i class="nav-icon fas fa-th"></i>
               <p>
-                SubCategorie
+                Sous-Categorie
               </p>
             </router-link>
           </li>
@@ -109,7 +109,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <router-link to="/ListUsers" class="nav-link">
               <i class="nav-icon fas fa-users"></i>
               <p>
-                Users
+                utilsateur
               </p>
             </router-link>
           </li>
@@ -130,20 +130,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
               </p>
             </router-link>
           </li>
-          <li class="nav-item">
-            <router-link to="/map" class="nav-link">
-                <i class="fas fa-map"></i>
-              <p>
-                map
-              </p>
-            </router-link>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="{{ route('logout') }}"
             onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
                            <i class="nav-icon fas fa-sign-out-alt"></i>
-             <p>{{ __('Logout') }}</p>
+             <p>{{ __(' Se déconnecter') }}</p>
          </a>
 
          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

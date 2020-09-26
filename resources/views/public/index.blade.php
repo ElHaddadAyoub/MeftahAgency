@@ -55,28 +55,22 @@
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-          <img id="logo-site" src="img/SoloLogo.png" alt="">
-       {{--  <h1 class="text-light"><a href="index.html"><span>M</span>Ftah-Agency</a></h1> --}}
+          {{-- <img id="logo-site" src="img/logo2.png" alt=""> --}}
+         <h1 class="text-light"><a href="index.html"><span>M</span>Ftah-Agency</a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
     <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><router-link :to="{ name:'public' }">Home</router-link></li>
+          <li class="active"><router-link :to="{ name:'public' }">Acceuil</router-link></li>
           <li ><router-link to="/blog">Blog</router-link></li>
-          <li class="drop-down"><a href="">Articles</a>
-            <ul>
-              <li><router-link to="/allArticles">All Articles</router-link></li>
-              <li><a href="#">Article test</a></li>
-
-            </ul>
-          </li>
-        @guest <li><a href="#contact">Contact</a></li>
-                 <li><a href="{{ route('login') }}">Login <i class="fas fa-sign-in-alt"></i></a></li>
+          <li> <router-link to="/allArticles">Articles</router-link></a></li>
+        @guest
+                 <li><a href="{{ route('login') }}">se connecter <i class="fas fa-sign-in-alt"></i></a></li>
                  @if (Route::has('register'))
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a class="nav-link" href="{{ route('register') }}">{{ __('s\'inscrire') }}</a>
                     </li>
                 @endif
         @else

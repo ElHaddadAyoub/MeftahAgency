@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-md-12">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                      <a class="navbar-brand" href="#">Affiner votre recherche :</a>
+                      <a class="navbar-brand" href="#">Affiner votre recherche</a>
 
         <div class="form-group mt-4">
             <select  class="form-control" v-model="subcategory" >
@@ -34,18 +34,29 @@
 <style scoped>
     select{
         width: 150px;
-        margin: 12px 12px;
+        margin: 5px 5px;
+        
+    }
+    .navbar{
+      
+        width: 80%;
+        margin: 72px 100px;
+    /* border-radius: 50%; */
+    /* border-radius:10% 10% 10% 10%; */
+        
     }
     #test{
         width: 150px;
-        margin: 12px 12px;
+        margin: 5px 5px;
+        
     }
     #filterbar{
-/*
-        padding: 140px 40px;
-        background: url('/public/img/cover.jpg') center center;
+        
+        bottom: 78px;
+        padding: 100px 10px;
+        background: url('https://images.pexels.com/photos/1257110/pexels-photo-1257110.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260') center center;
         background-position: center center;
-        background-size: cover; */
+        background-size: cover; 
     }
 </style>
 <script>

@@ -8,6 +8,8 @@ use App\Category;
 use App\User;
 use App\region;
 use App\ville;
+use App\Favorite;
+use App\blog;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Auth;
 use App\ArticleImage;
@@ -140,6 +142,31 @@ class PostArticleController extends Controller
         return response()->json([
             "annonces" => $annonces
          ],200);
+    }
+    public function blog_by_user(){
+        $blogs = blog::with('user')->where('user_id',Auth::user()->id)->orderBy('id','desc')->get();
+        return response()->json([
+            "blogs" => $blogs
+         ],200);
+    }
+    public function getFavoris() {
+        $favoris = Favorite::where('user_id', Auth::user()->id)->get();
+        $favT = $favoris->map(function ($user) {
+            return collect($user->toArray())
+                ->only(['article_id'])
+                ->all();
+        });
+        //
+        //$ann = [];
+        //for($i = 0 ; $i < count($favT) ; $i++){
+            foreach($favT as $favtss){
+               $ann[]= Article::with('category','user','region')->where('id',$favtss)->orderBy('id','desc')->get();
+            }
+            
+        //}
+        return response()->json([
+            "favoris" => $ann
+        ],200);
     }
     public function userProfile(){
         $user = User::where('id',Auth::user()->id)->get();

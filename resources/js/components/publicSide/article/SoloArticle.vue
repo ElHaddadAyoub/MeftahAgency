@@ -25,7 +25,7 @@
                     <span class="badge badge-info">{{ solopostarticle.surface }} m<sup>2</sup></span> <span class="badge badge-info">{{ solopostarticle.nb_chambre }} Chambres</span> <span class="badge badge-info">{{ solopostarticle.etat }} </span>
                 </div>
                 <vue-star animate="animated rubberBand" color="#F05654" >
-                <a  slot="icon" style="size:30px" class="fa fa-heart" ></a>
+                <a  slot="icon" @change="ajouterToFavoris(solopostarticle.id)" style="size:30px" class="fa fa-heart" ></a>
                 </vue-star>
 
 
@@ -46,6 +46,8 @@
             <!-- </div> -->
             <!-- <div class="col-12 col-sm-6"> -->
                 <h5><i class="fas fa-file-alt"></i> Description complète</h5>
+                <h3 class="coeur"><a href="#" @click.prevent="ajouterToFavoris(solopostarticle.id)" > <i class="fas fa-heart"></i></a></h3>
+
               <p>{{ solopostarticle.description }}</p>
 
               <hr>
@@ -69,47 +71,9 @@
 <h6>Telephone :<span v-if="solopostarticle.user" style="float:right;font-size:16px;color:">{{ solopostarticle.user.telephone }}</span></h6>
 
 
-
-              <div class="mt-4">
-                <div class="btn btn-primary btn-lg btn-flat">
-                  <i class="fas fa-cart-plus fa-lg mr-2"></i>
-                  Add to Cart
-                </div>
-
-
-              </div>
-
-              <div class="mt-4 product-share">
-                <a href="#" class="text-gray">
-                  <i class="fab fa-facebook-square fa-2x"></i>
-                </a>
-                <a href="#" class="text-gray">
-                  <i class="fab fa-twitter-square fa-2x"></i>
-                </a>
-                <a href="#" class="text-gray">
-                  <i class="fas fa-envelope-square fa-2x"></i>
-                </a>
-                <a href="#" class="text-gray">
-                  <i class="fas fa-rss-square fa-2x"></i>
-                </a>
-              </div>
-
             </div>
           </div>
-          <div class="row mt-4">
-            <nav class="w-100">
-              <div class="nav nav-tabs" id="product-tab" role="tablist">
-                <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Description</a>
-                <a class="nav-item nav-link" id="product-comments-tab" data-toggle="tab" href="#product-comments" role="tab" aria-controls="product-comments" aria-selected="false">Comments</a>
-                <a class="nav-item nav-link" id="product-rating-tab" data-toggle="tab" href="#product-rating" role="tab" aria-controls="product-rating" aria-selected="false">Rating</a>
-              </div>
-            </nav>
-            <div class="tab-content p-3" id="nav-tabContent">
-              <div class="tab-pane fade show active" id="product-desc" role="tabpanel" aria-labelledby="product-desc-tab"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vitae condimentum erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed posuere, purus at efficitur hendrerit, augue elit lacinia arcu, a eleifend sem elit et nunc. Sed rutrum vestibulum est, sit amet cursus dolor fermentum vel. Suspendisse mi nibh, congue et ante et, commodo mattis lacus. Duis varius finibus purus sed venenatis. Vivamus varius metus quam, id dapibus velit mattis eu. Praesent et semper risus. Vestibulum erat erat, condimentum at elit at, bibendum placerat orci. Nullam gravida velit mauris, in pellentesque urna pellentesque viverra. Nullam non pellentesque justo, et ultricies neque. Praesent vel metus rutrum, tempus erat a, rutrum ante. Quisque interdum efficitur nunc vitae consectetur. Suspendisse venenatis, tortor non convallis interdum, urna mi molestie eros, vel tempor justo lacus ac justo. Fusce id enim a erat fringilla sollicitudin ultrices vel metus. </div>
-              <div class="tab-pane fade" id="product-comments" role="tabpanel" aria-labelledby="product-comments-tab"> Vivamus rhoncus nisl sed venenatis luctus. Sed condimentum risus ut tortor feugiat laoreet. Suspendisse potenti. Donec et finibus sem, ut commodo lectus. Cras eget neque dignissim, placerat orci interdum, venenatis odio. Nulla turpis elit, consequat eu eros ac, consectetur fringilla urna. Duis gravida ex pulvinar mauris ornare, eget porttitor enim vulputate. Mauris hendrerit, massa nec aliquam cursus, ex elit euismod lorem, vehicula rhoncus nisl dui sit amet eros. Nulla turpis lorem, dignissim a sapien eget, ultrices venenatis dolor. Curabitur vel turpis at magna elementum hendrerit vel id dui. Curabitur a ex ullamcorper, ornare velit vel, tincidunt ipsum. </div>
-              <div class="tab-pane fade" id="product-rating" role="tabpanel" aria-labelledby="product-rating-tab"> Cras ut ipsum ornare, aliquam ipsum non, posuere elit. In hac habitasse platea dictumst. Aenean elementum leo augue, id fermentum risus efficitur vel. Nulla iaculis malesuada scelerisque. Praesent vel ipsum felis. Ut molestie, purus aliquam placerat sollicitudin, mi ligula euismod neque, non bibendum nibh neque et erat. Etiam dignissim aliquam ligula, aliquet feugiat nibh rhoncus ut. Aliquam efficitur lacinia lacinia. Morbi ac molestie lectus, vitae hendrerit nisl. Nullam metus odio, malesuada in vehicula at, consectetur nec justo. Quisque suscipit odio velit, at accumsan urna vestibulum a. Proin dictum, urna ut varius consectetur, sapien justo porta lectus, at mollis nisi orci et nulla. Donec pellentesque tortor vel nisl commodo ullamcorper. Donec varius massa at semper posuere. Integer finibus orci vitae vehicula placerat. </div>
-            </div>
-          </div>
+
         </div>
         <!-- /.card-body -->
       </div>
@@ -137,6 +101,12 @@
     #bd{
         float: left;
     }
+    .coeur{
+         position: absolute;
+        left: 650px;
+        width: 400px;
+        top: 10px;
+    }
 </style>
 <script>
     import ArticleBar from './ArticleBar.vue';
@@ -149,6 +119,7 @@
         },
         computed:{
 
+
         solopostarticle(){
                 return this.$store.getters.solopostarticle
             }
@@ -158,6 +129,12 @@
             //Slick
         },
         methods:{
+        // addToFavorite(val){
+        //         axios.post("/addArticle/".val)
+        //         .then((response)=>{
+
+        //         })
+        // },
         splStr(val){
               return val.split(",")
             },
@@ -167,7 +144,33 @@
         formatPrice(value) {
         let val = (value/1).toFixed(2).replace(' ', '.')
         return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
-    }
+        },
+        ajouterToFavoris(id){
+              swal.fire ({
+                    title: 'ajoute annonce aux favoris?',
+                    text: "voullez vous vraiment ajouter aux favoris",
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Oui' }).then((result)=>{
+                         if(result.value){
+                            axios.get('/favoris/'+id)
+                           console.log('added successflly')
+                            .then(()=>{
+                                this.$store.dispatch('allArticle')
+                                swal.fire(
+                                    'Aux Favoris!',
+                                    'l\'annonce à bien ajouter aux favoris ',
+                                    'success'
+                                 )
+                                })
+                                .catch(()=>{
+                                     swal.fire("Error!", "error d\'ajoute d'\'annonce !", "warning");
+                                })
+                        }
+                })
+        }
         },
         watch:{
             $route(to,from){

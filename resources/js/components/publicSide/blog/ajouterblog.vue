@@ -79,10 +79,10 @@ export default {
     methods:{
              loadphoto(event){
             let file = event.target.files[0];
-            if(file.size>1048576){
+            if(file.size>3048576){
                 swal.fire({
                 icon: 'error',
-                title: 'Choose File min than 1MB',
+                title: 'Choose File min than 3MB',
                 text: 'Something went wrong!'
                 })
             }else{

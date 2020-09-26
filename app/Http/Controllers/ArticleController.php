@@ -5,6 +5,7 @@ use App\Article;
 use App\Category;
 use App\User;
 use App\ArticleImage;
+use App\Favorite;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -81,42 +82,74 @@ class ArticleController extends Controller
         }
         $article->delete();
     }
+    public function ajouter_favoris($id){
+        
+        if($favTest = Favorite::where('user_id', Auth::user()->id)->where('article_id',$id)->first()){
+            return response()->json(['article deja ajouter aux favoris'=>false ,'data'=> $favTest]);
+        }else{
+            $fav = Favorite::create([
+                'user_id' =>  Auth::user()->id,
+                'article_id'=>$id
+            ]);
+            return response()->json(['test'=>false ,'data'=> $fav]);
+            
+        }
+     
+
+        
+    }
     public function edit_article($id){
-        $article = Article::find($id);
+        $article = Article::findOrFail($id);
         return response()->json([
             'article'=>$article
         ],200);
     }
     public function update_article(Request $request, $id){
-        $article = Article::find($id);
-        $this->validate($request,[
-            'title'=>'required|min:2|max:50',
-            'description'=>'required|min:2|max:1000'
-        ]);
+        
+        return response()->json([
+            'dataKK'=>$request
+        ],200);
+        // $article = Article::find($id);
+        // $this->validate($request->$post,[
+        //     'title'=>'required|min:2|max:50',
+        //     'description'=>'required|min:2|max:1000'
+        // ]);
+        // if($request->data->images!=$article->images){
+        //     $strpos = strpos($request->images,';');
+        //     $sub = substr($request->images,0,$strpos);
+        //     $ex = explode('/',$sub)[1];
+        //     $name = time().".".$ex;
+        //     $img = Image::make($request->images)->resize(200, 200);
+        //     $upload_path = public_path()."/img/uploadimage/";
+        //     $image = $upload_path. $article->photo;
+        //     $img->save($upload_path.$name);
+
+        //     if(file_exists($image)){
+        //         @unlink($image);
+        //     }
+        // }else{
+        //     $images = $article->images;
+        // }
+
+        // $article->title = $request->post->title;
+        // $article->description = $request->post->description;
+        // $article->category_id = $request->post->category_id;
+        // $article->images = $images;
+        // $article->description = $request->post->description;
+        // $article->category_id = $request->post->category_id;
+        // $article->subcategory = $request->post->subcategory;
+        // $article->etat = $request->post->etat;
+        // $article->caracteristique = $request->post->caracteristique;
+        // $article->region_id = $request->post->region_id;
+        // $article->ville = $request->post->ville;
+        // $article->prix = $request->post->prix;
+        // $article->nb_chambre = $request->post->nb_chambre;
+        // $article->surface = $request->post->surface;
+        // $article->save();
 
 
-        if($request->photo!=$article->photo){
-            $strpos = strpos($request->photo,';');
-            $sub = substr($request->photo,0,$strpos);
-            $ex = explode('/',$sub)[1];
-            $name = time().".".$ex;
-            $img = Image::make($request->photo)->resize(200, 200);
-            $upload_path = public_path()."/img/uploadimage/";
-            $image = $upload_path. $article->photo;
-            $img->save($upload_path.$name);
-
-            if(file_exists($image)){
-                @unlink($image);
-            }
-        }else{
-            $name = $article->photo;
-        }
-
-        $article->title = $request->title;
-        $article->description = $request->description;
-        $article->category_id = $request->category_id;
-        $article->photo = $name;
-        $article->save();
+  
+    
     }
     public function cherche_article(){
         $cherche = \Request::get('c');

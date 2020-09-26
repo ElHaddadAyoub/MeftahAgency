@@ -4,12 +4,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Users</h1>
+            <h1 class="m-0 text-dark">Utilisateur</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Users</li>
+              <li class="breadcrumb-item active">Utilisateur</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -20,11 +20,11 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h1 class="card-title">Users</h1>
+                <h1 class="card-title">Utilisateur</h1>
 
-                <div class="card-tools">
+                <!-- <div class="card-tools">
                     <button class="btn btn-success"><i class="fas fa-plus white"> </i> <router-link to="/AddUser" style="color:#fff;">new User</router-link> </button>
-                </div>
+                </div> -->
               </div>
               <!-- /.card-header -->
               <div class="card-body table-responsive p-0">
@@ -32,9 +32,9 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>name</th>
-                      <th>mail</th>
-                      <th>Created At</th>
+                      <th>Nom</th>
+                      <th>Email</th>
+                      <th>Inscrit En</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -44,7 +44,8 @@
                       <td>{{ user.name }}</td>
                       <td>{{ user.email }}</td>
                       <td>{{ user.created_at | ourTime }}</td>
-                      <td><router-link :to="`/Edituser/${user.id}`"><i class="fa fa-edit green"></i></router-link> | <a href="#" @click.prevent="deleteUser(user.id)"> <i class="fa fa-trash red"></i></a></td>
+                      <td><a href="#" @click.prevent="deleteUser(user.id)"> <i class="fa fa-trash red"></i></a></td>
+                      <!-- <td><router-link :to="`/Edituser/${user.id}`"><i class="fa fa-edit green"></i></router-link> | <a href="#" @click.prevent="deleteUser(user.id)"> <i class="fa fa-trash red"></i></a></td> -->
                     </tr>
                   </tbody>
                 </table>

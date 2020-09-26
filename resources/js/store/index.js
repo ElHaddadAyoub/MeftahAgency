@@ -20,6 +20,8 @@ export default {
         tousCategories:[],
         dernierArticle:[],
         annonceParUser: [],
+        blogPerUser: [],
+        favorisParUser: [],
         userProfile:[],
         regions:[],
         tousregion:[],
@@ -52,6 +54,12 @@ export default {
         },
         getannonce(state){
             return state.annonceParUser;
+        },
+        getblog(state){
+            return state.blogPerUser;
+        },
+        getFavoris(state){
+            return state.favorisParUser;
         },
         getCategory(state){
             return state.category
@@ -156,7 +164,11 @@ export default {
         allpostArticles(context){
             axios.get('/postarticles')
             .then((response)=>{
-                context.commit('postarticlee',response.data.postarticles)
+                if(response.data.postarticles.length){
+                    context.commit('postarticlee',response.data.postarticles)
+                }
+                
+                
             })
         },
         getsolopostarticle(context,payload){
@@ -249,6 +261,18 @@ export default {
                 context.commit('annoncesparuser',response.data.annonces);
             })
         },
+        allblogs(context){
+            axios.get('/blogParUser')
+            .then((response)=>{
+                context.commit('blogparuser',response.data.blogs);
+            })
+        },
+        allFavoris(context){
+            axios.get('/FavorisParUser')
+            .then((response)=>{
+                context.commit('favorisparuser',response.data.favoris);
+            })
+        },
         getUserProfile(context){
             axios.get('/UserProfile')
             .then(response=>{
@@ -338,7 +362,12 @@ export default {
         annoncesparuser(state,payload){
             state.annonceParUser = payload
         },
-
+        blogparuser(state,payload){
+            state.blogPerUser = payload
+        },
+        favorisparuser(state,payload){
+            state.favorisParUser = payload
+        },
         userProfile(state,payload){
             state.userProfile = payload
         },
@@ -350,6 +379,6 @@ export default {
         }
 
     },
-    strict: debug
+    strict: false
 }
 

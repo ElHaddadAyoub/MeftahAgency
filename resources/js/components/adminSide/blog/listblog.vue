@@ -29,10 +29,10 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>title</th>
+                      <th>titre</th>
                       <th>description</th>
                       <th>Auteur</th>
-                      <th>Create at</th>
+                      <th>Crée en</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -84,21 +84,21 @@
             deleteCategory(id){
                 //ale{{rt("test"+id)
                  swal.fire ({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                   title: 'vous etes sur?',
+                    text: "vous etes sur de supprimer ce blog ",
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!' }).then((result)=>{
+                    confirmButtonText: 'oui supprime l\'annonce!' }).then((result)=>{
                         if(result.value){
                                  axios.get('/blog/'+id)
                                 .then(()=>{
                                     this.$store.dispatch("allBlog");
                                          swal.fire(
-                                        'Deleted!',
-                                        'Your file has been deleted.',
-                                        'success'
+                                            'supprimer!',
+                                            'annonce a ete supprimer !',
+                                            'success'
                                         )
                                 })
                                 .catch(()=>{

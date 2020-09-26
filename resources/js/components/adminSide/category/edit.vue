@@ -47,8 +47,8 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-info" style="color:#fff;">Update</button>
-                  <button type="submit" class="btn btn-danger float-right">Cancel</button>
+                  <button type="submit" class="btn btn-info" style="color:#fff;">Edite</button>
+
                 </div>
                 <!-- /.card-footer -->
               </form>
@@ -93,7 +93,7 @@ export default {
                 this.$router.push('/Listcategory');// routeur a la page des list des catagorie
                 toast.fire({
                     icon: 'success',
-                    title: 'Category updated successfully'
+                    title: 'la catergory a ete editer avec success !'
                 })
             })
             .catch(()=>{

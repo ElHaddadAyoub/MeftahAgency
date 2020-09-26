@@ -111,7 +111,7 @@ export default {
                     swal({
                         type: 'error',
                         title: 'Oops...',
-                        text: 'Something went wrong!',
+                        text: 'la taille de image est tres grande!',
                     })
                 }else{
                     let reader = new FileReader();
@@ -131,21 +131,21 @@ export default {
                 this.$router.push('/Listsubcategory');// routeur a la page des list des catagorie
                 toast.fire({
                     icon: 'success',
-                    title: 'Subcategory updated successfully'
+                    title: 'la sous-catergory a ete editer avec success !',
                 })
             })
             .catch(()=>{
                    // this.$Progress.fail();
             })
         },
-                   updateImage(){
-                let img = this.form.avatar;
-                if(img.length>100){
-                    return  this.form.avatar
-                }else{
-                    return `img/subcategoryImage/${this.form.avatar}`
-                }
+        updateImage(){
+            let img = this.form.avatar;
+            if(img.length>100){
+                return  this.form.avatar
+            }else{
+                return `img/subcategoryImage/${this.form.avatar}`
             }
+        }
     }
 }
 </script>

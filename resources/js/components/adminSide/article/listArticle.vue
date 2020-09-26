@@ -23,7 +23,7 @@
                 <h1 class="card-title">Articles</h1>
 
                 <div class="card-tools">
-                    <button class="btn btn-success"><i class="fas fa-plus white"> </i><router-link to="/addArticlee" style="color:#fff"> new Article</router-link> </button>
+                    <button class="btn btn-success"><i class="fas fa-plus white"> </i><router-link to="/addArticlee" style="color:#fff"> nouveau Article</router-link> </button>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -33,11 +33,11 @@
                     <tr>
 
                       <th>ID</th>
-                      <th>title</th>
+                      <th>titre</th>
                       <th>description</th>
-                      <th>Category</th>
-                      <th>User</th>
-                      <th>Create at</th>
+                      <th>categorie</th>
+                      <th>utilisateur</th>
+                      <th>Crée en</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -50,7 +50,7 @@
                       <td v-if="art.user">{{ art.user.name }} tt</td>
                       <td>{{ art.created_at | ourTime}}</td>
 
-                      <td><router-link :to="`/EditArticle/${art.id}`"><i class="fa fa-edit green"></i></router-link> | <a href="#" @click.prevent="deleteArticle(art.id)" > <i class="fa fa-trash red"></i></a></td>
+                      <td><a href="#" @click.prevent="deleteArticle(art.id)" > <i class="fa fa-trash red"></i></a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -86,20 +86,20 @@ import _ from 'lodash'
             },
             deleteArticle(id){
                 swal.fire ({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                    title: 'vous etes sur?',
+                    text: "vous etes sur de supprimer cette annonce ",
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!' }).then((result)=>{
+                    confirmButtonText: 'oui, supprime l\'annonce!' }).then((result)=>{
                          if(result.value){
                             axios.get('/article/'+id)
                             .then(()=>{
                                 this.$store.dispatch('allArticle')
                                 swal.fire(
-                                    'Deleted!',
-                                    'Your file has been deleted.',
+                                    'supprimer!',
+                                    'annonce a ete supprimer !',
                                     'success'
                                  )
                                 })

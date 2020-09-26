@@ -4,19 +4,19 @@
               <div class="single-blog-page">
                 <!-- search option start -->
                 <form action="#">
-                  <div class="search-option">
+                  <!-- <div class="search-option">
                     <input @keyup="chercheArticle" type="text" v-model="keyword" placeholder="Search...">
                     <button class="submit" @click.prevent="chercheArticle" type="submit">
                       <i class="fa fa-search"></i>
                     </button>
-                  </div>
+                  </div> -->
                 </form>
                 <!-- search option end -->
               </div>
               <div class="single-blog-page">
                 <!-- recent start -->
                 <div class="left-blog">
-                  <h4>recent post</h4>
+                  <h4>Nouvelle annonce</h4>
                   <div class="recent-post" v-for="(article,index) in getallPostArticles" :key="article.id" v-if="index<2"><!-- v-if : pour afficher juste deux article -->
                     <!-- start single post -->
                     <div class="recent-single-post">

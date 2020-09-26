@@ -27,6 +27,21 @@ class CategoryController extends Controller
         ]);
 
     }
+    public function addContact(Request $request){
+        $this->validate($request,[
+            'name' => 'required|string',
+            'email' => 'email',
+            'message' => 'required|min:10',
+            //'password' => 'required|string|min:6',
+            //'bio' =>'string|min:10'
+        ]);
+        return Category::create([
+            
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'message' => $request['message'],
+        ]);
+    }
     public function all_category(){
         $categories = Category::all();
         return response()->json([

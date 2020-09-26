@@ -23,7 +23,7 @@
                 <h1 class="card-title">Category</h1>
 
                 <div class="card-tools">
-                    <button class="btn btn-success"><i class="fas fa-plus white"> </i><router-link to="/Addcategory" style="color:#fff"> new Category</router-link> </button>
+                    <button class="btn btn-success"><i class="fas fa-plus white"> </i><router-link to="/Addcategory" style="color:#fff"> nouveau Categorie</router-link> </button>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -32,9 +32,9 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>title</th>
+                      <th>titre</th>
                       <th>description</th>
-                      <th>Create at</th>
+                      <th>Crée en</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -85,21 +85,21 @@
             deleteCategory(id){
                 //ale{{rt("test"+id)
                  swal.fire ({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                   title: 'vous etes sur?',
+                    text: "vous etes sur de supprimer ce blog ",
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!' }).then((result)=>{
+                    confirmButtonText: 'oui, supprimer le!' }).then((result)=>{
                         if(result.value){
                                  axios.get('/category/'+id)
                                 .then(()=>{
                                     this.$store.dispatch("allCategory");
                                          swal.fire(
-                                        'Deleted!',
-                                        'Your file has been deleted.',
-                                        'success'
+                                         'supprimer!',
+                                    'annonce a ete supprimer !',
+                                    'success'
                                         )
                                 })
                                 .catch(()=>{

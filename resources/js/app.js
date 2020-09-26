@@ -2,6 +2,8 @@
 require('./bootstrap');
 window.Vue = require('vue');
 import Vue from 'vue'
+//import '@/assets/css/tailwind.css'
+
 
 //<-- VueX
 import Vuex from 'vuex'
@@ -10,6 +12,13 @@ import storeData from "./store/index.js"
 const store = new Vuex.Store(
     storeData
 )
+import Vuesax from 'vuesax'
+
+import 'vuesax/dist/vuesax.css' //Vuesax styles
+Vue.use(Vuesax, {
+  // options here
+})
+import 'material-icons/iconfont/material-icons.css';
 //End VueX -->
 //Import Editor markdo...
 import 'v-markdown-editor/dist/v-markdown-editor.css';

@@ -1,8 +1,19 @@
 <template>
+<div class="test">
+      <div class="suscribe-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
+                            <div class="suscribe-text text-center">
+                            <h3>Meftah vous offre plus de 1000 annonces adepose gratuit</h3>
+
+                            </div>
+                            </div>
+                        </div>
+    </div>
+</div>
 <div class="container">
-
-
-  <div class="card mt-4" :key="componentKey">
+<div class="card mt-4" :key="componentKey">
     <div class="card-header">Ajouter Une Annonce</div>
     <div class="card-body">
       <div
@@ -12,21 +23,29 @@
         role="alert"
       >{{ status_msg }}</div>
       <form>
-        <div class="form-group">
+          <h5>Information general <hr></h5>
+          <div class="form-row">
+          
+
+        <div class="col">
           <label for="exampleFormControlInput1">Title</label>
           <input
             v-model="title" type="text" class="form-control" id="title" placeholder="Post Title" required
           />
         </div>
-
+          <div class="col">
+            <label for="">Prix de Bien</label>
+            <currency-input v-model="prix" placeholder="prix" v-currency="{currency: 'MAD', locale: 'fr'}"  class="form-control"/>
+        </div>
+        </div>
+            
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Article description</label>
           <textarea v-model="description" class="form-control" id="post-content" rows="3" required></textarea>
         </div>
-        <div class="form-group">
-            <label for="">Prix de Bien</label>
-            <currency-input v-model="prix" v-currency="{currency: 'MAD', locale: 'fr'}"  class="form-control"/>
-        </div>
+      
+        
+        <h5>Info sur le localisation du bien <hr></h5>
         <div class="form-group">
             <label>region</label>
             <select  class="form-control" v-model="region_id" @change="getAllVille">
@@ -47,7 +66,9 @@
 
 
         </div>
-
+        
+        
+        <h5>Specification du bien <hr></h5>
         <div class="form-group">
             <label>Category</label>
             <select  class="form-control" v-model="category_id" @change="getallSubCategory">
@@ -72,7 +93,8 @@
 
             </div>
     <br>
-            <div class="form-group">
+            <div class="form-row">
+ <div class="col">
                 <label>Nombre de chambre</label>
                 <select v-model="nb_chambre" id="" class="form-control">
                     <option value="" disabled>Choisir nombre des chambres</option>
@@ -81,14 +103,14 @@
                         <option value="3">3</option>
                 </select>
             </div>
-            <div class="form-group">
+            <div class="col">
                 <label>Surface</label>
                 <input
                     v-model="surface" type="number" class="form-control" id="" placeholder="surface de votre bien" required
           />
             </div>
-        </div>
-        <div class="form-group">
+        
+        <div class="col">
             <label>Etat de Bien</label>
             <select  class="form-control" v-model="etat">
                 <option value="" disabled>Select Etat de bien</option>
@@ -97,7 +119,10 @@
                 <option  value="A renover">A renover</option>
             </select>
         </div>
+            </div>
+           </div>
 
+        <h5>Images du bien <hr></h5>
         <label>Images</label>
         <div class>
           <el-upload
@@ -124,9 +149,28 @@
     </div>
   </div>
   </div>
+  </div>
 </template>
 
 <style>
+.center-separator {
+    display: flex;
+  line-height: 1em;
+  color: gray;
+  font-size: 22px;
+}
+
+.center-separator::before, .center-separator::after {
+    content: '';
+    display: inline-block;
+    flex-grow: 1;
+    margin-top: 0.5em;
+    background: gray;
+    height: 1px;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
 .avatar-uploader .el-upload {
   border: 1px dashed #d9d9d9;
   border-radius: 6px;
@@ -197,8 +241,8 @@ export default {
   },
 
     mounted() {
-           this.$store.dispatch("allCategory");
-            this.$store.dispatch("getAllregion");
+        this.$store.dispatch("allCategory");
+        this.$store.dispatch("getAllregion");
 
         },
     computed:{
@@ -212,7 +256,7 @@ export default {
         },
   methods: {
 
-              getallSubCategory(){
+            getallSubCategory(){
             axios.get(`/subcategory/${this.category_id}`)
             .then(response => this.subcategories = response.data.val)
             .catch(()=>{

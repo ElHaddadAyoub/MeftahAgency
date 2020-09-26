@@ -84,9 +84,11 @@ export const routes = [
 
 
 
-//Partie Admin
-
-
+//Partie Admin"
+    {
+        path:'/admin',
+        component: adminhome
+    },
     {
         path:'/Listcategory',
         component:listcategory

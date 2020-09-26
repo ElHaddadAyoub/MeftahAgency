@@ -22,10 +22,10 @@
                     <tr v-for="(annonce,index) in getallannonces" :key="annonce.id">
                       <td>{{ index + 1 }}</td>
                       <td>{{ annonce.title}}</td>
-                      <td>{{ annonce.description}}</td>
-                      <td>{{ annonce.created_at }}</td>
+                      <td>{{ annonce.description | miniCaraters}}</td>
+                      <td>{{ annonce.created_at | ourTime}}</td>
 
-                      <td><router-link :to="`/EditAnnonce/${annonce.id}`" ><i class="fa fa-edit green"></i></router-link> | <a href="#"  @click.prevent="deleteAnnonce(annonce.id)"> <i class="fa fa-trash red"></i></a></td>
+                      <td> <a href="#"  @click.prevent="deleteAnnonce(annonce.id)"> <i class="fa fa-trash red"></i></a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -41,7 +41,7 @@ export default {
      mounted() {
            this.$store.dispatch("allannonces");
            //this.$store.dispatch('getcatagoriePag', {currentPage})
-
+            // console.log(this.$store.getters.getannonce);
         },
         computed:{
            getallannonces(){
@@ -49,7 +49,7 @@ export default {
                 return this.$store.getters.getannonce
            }
         },
-                methods:{
+    methods:{
         deleteAnnonce(id){
                 //ale{{rt("test"+id)
                  swal.fire ({

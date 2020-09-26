@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="684" height="580" viewBox="0 0 684 580">
+  <defs>
+    <clipPath id="clip-Logo">
+      <rect width="684" height="580"/>
+    </clipPath>
+  </defs>
+  <g id="Logo" clip-path="url(#clip-Logo)">
+    <rect width="684" height="580" fill="#fff"/>
+    <path id="Path_1" data-name="Path 1" d="M0,197.442l203.406-59.878V426H0Z" transform="translate(118.998 67.988)" fill="#3eb5fd"/>
+    <path id="Path_3" data-name="Path 3" d="M0,0,226.377,58.286V426H0Z" transform="translate(354.621 67.988)" fill="#3eb5fd"/>
+    <path id="Icon_feather-key" data-name="Icon feather-key" d="M435.73-4.81,385.5,43.952M212.929,211.187c48.71,47.2,48.71,123.728,0,170.929-8.166,7.914-17.641,15.66-34.459,24.085s-45.7,17.367-45.7,17.367L21.6,227.13s12.934-14,14.932-15.933c48.708-47.2,127.68-47.2,176.389,0Zm0,0,93.2-90.32m0,0,68.032,65.927L381,114.149l72.532-4.27L385.5,43.952m-79.371,76.915L385.5,43.952" transform="translate(499.963 648.174) rotate(-150)" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="30"/>
+  </g>
+</svg>

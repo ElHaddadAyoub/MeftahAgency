@@ -4,12 +4,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">SubCategory</h1>
+            <h1 class="m-0 text-dark">sous-categorie</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">SubCategory</li>
+              <li class="breadcrumb-item active">sous-categorie</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -19,10 +19,10 @@
           <div class="col-md-12">
             <div class="card">
               <div class="card-header">
-                <h1 class="card-title">Subcategory</h1>
+                <h1 class="card-title">sous-categorie</h1>
 
                 <div class="card-tools">
-                    <button class="btn btn-success"><i class="fas fa-plus white"> </i> <router-link to="/AddSubcategory" style="color:#fff"> new Subcategory</router-link></button>
+                    <button class="btn btn-success"><i class="fas fa-plus white"> </i> <router-link to="/AddSubcategory" style="color:#fff"> Nouveau sous-categorie</router-link></button>
                 </div>
               </div>
               <!-- /.card-header -->
@@ -31,10 +31,10 @@
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>title</th>
+                      <th>titre</th>
                       <th>description</th>
                       <th>Photo</th>
-                      <th>Category</th>
+                      <th>Categorie</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -42,10 +42,10 @@
                     <tr  v-for="(sub,index) in getallSubCategory" :key="sub.id">
                       <td>{{index+1}}</td>
                       <td>{{sub.title}}</td>
-                      <td>{{sub.description}}</td>
+                      <td>{{sub.description | miniCaraters}}</td>
                       <td><img :src="GetPhoto(sub.avatar)" alt="" width="30" height="30"></td>
                       <td v-if="sub.category">{{ sub.category.title }}</td>
-                      <td><router-link :to="`/EditSubcategory/${sub.id}`" ><i class="fa fa-edit green"></i></router-link> | <a @click.prevent="deleteSubcategory(sub.id)"> <i class="fa fa-trash red"></i></a></td>
+                      <td><router-link :to="`/EditSubcategory/${sub.id}`" ><i class="fa fa-edit green"></i></router-link> | <a href="#" @click.prevent="deleteSubcategory(sub.id)"> <i class="fa fa-trash red"></i></a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -81,25 +81,22 @@
            }
         },
         methods:{
-            GetPhoto(img){
-                return "../img/subcategoryImage/"+img;
-            },
             deleteSubcategory(id){
                 swal.fire ({
-                    title: 'Are you sure?',
-                    text: "You won't be able to revert this!",
+                   title: 'vous etes sur?',
+                    text: "vous etes sur de supprimer ce blog ",
                     type: 'warning',
                     showCancelButton: true,
                     confirmButtonColor: '#3085d6',
                     cancelButtonColor: '#d33',
-                    confirmButtonText: 'Yes, delete it!' }).then((result)=>{
+                    confirmButtonText: 'oui, supprimer le!' }).then((result)=>{
                          if(result.value){
                             axios.get('/subcategory/'+id)
                             .then(()=>{
                                 this.$store.dispatch('allSubcategory')//had All subcategoy Jaya mn index.js (action)
                                 swal.fire(
-                                    'Deleted!',
-                                    'Your file has been deleted.',
+                                    'supprimer!',
+                                    'annonce a ete supprimer !',
                                     'success'
                                  )
                                 })
@@ -108,6 +105,9 @@
                                 })
                         }
                 })
+            },
+            GetPhoto(img){
+                return "../img/subcategoryImage/"+img;
             },
 
 

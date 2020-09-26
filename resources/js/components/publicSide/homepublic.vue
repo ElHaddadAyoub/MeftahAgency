@@ -1,11 +1,10 @@
 
-
 <template>
     <div>
 
         <section class="presentation">
 				<div class="introduction">
-					<div class="intro-text">
+					<div class="intro-text ">
 						<h1>Tout l'immobilier au Maroc en vente ou location!</h1>
 						<p>
 							Des biens immobiliers  à découvrir partout au Maroc
@@ -21,73 +20,27 @@
 					<img src="img/cover2.jpg" alt="cover" />
 				</div>
 			</section>
-            <div class="suscribe-area">
+       
+            <div id="des" data-aos="fade-up">
+                <div class="text-center">
+                    <h5 class="title1">Des biens immobiliers  à découvrir<br> partout au Maroc</h5>
+                </div>
+            </div>
+              <div class="suscribe-area">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs=12">
                             <div class="suscribe-text text-center">
-                            <h3>Bienvenue dans notre entreprise Meftah-Agency</h3>
-
+                            <h3 >Bienvenue dans notre entreprise Meftah-Agency</h3>
                             </div>
                             </div>
                         </div>
                     </div>
             </div>
            <div class="container">
-                       <div class="row" data-aos="fade-up">
-          <div class="col-md-12 col-sm-12 col-xs-12">
-            <div class="section-headline text-center">
-              <h2>Emplacements populaires</h2>
-            </div>
-          </div>
-        </div>
-        <div class="row" data-aos="fade-up">
+       
 
-                    <div class="col-lg-4">
-        <router-link to="/articleofVille/fes">
-
-            <div class="card mb-3">
-            <h3 class="card-header">Casablanca</h3>
-            <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
-
-        </div>
-        </router-link>
-         </div>
-
-        <div class="col-lg-4">
-            <a href="" @click.prevent="test('tanger')">
-            <div class="card mb-3">
-            <h3 class="card-header">Tanger</h3>
-            <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
-            </div>
-            </a>
-        </div>
-        <div class="col-lg-4">
-            <div class="card mb-3">
-            <h3 class="card-header">Rabat</h3>
-            <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card mb-3">
-            <h3 class="card-header">Kénitra</h3>
-            <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card mb-3">
-            <h3 class="card-header">Marrakech</h3>
-            <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
-            </div>
-        </div>
-        <div class="col-lg-4">
-            <div class="card mb-3">
-            <h3 class="card-header">Agadir</h3>
-            <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
-            </div>
-        </div>
-
-        </div>
+    
 
                <br>
         <div class="row" data-aos="fade-up">
@@ -113,34 +66,34 @@
             <div class="well-middle">
               <div class="single-well">
                 <a href="#">
-                  <h4 class="sec-head">project Maintenance</h4>
+                  <h4 class="sec-head">a propos de nous</h4>
                 </a>
                 <p>
-                  Redug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure aspernatur sit adipisci quaerat unde at nequeRedug Lagre dolor sit amet, consectetur adipisicing elit. Itaque quas officiis iure
+                  Meftah est le site n°1 d'achat et de vente de biens immobiliers et de services au Maroc. Meftah Immobilier Neuf est un nouvel espace qui propose des projets d’immobiliers neufs finis ou en construction à Casablanca, Marrakech, Rabat et presque toutes les grandes villes au Maroc. Les meilleurs promoteurs et agences immobilières proposent une large sélection d'appartements neufs, des maisons neuves et des villas luxueuses à prix intéressants sur Avito Immobilier Neuf.
                 </p>
-                <ul>
-                  <li>
-                    <i class="fa fa-check orange"></i> Interior design Package
-                  </li>
-                  <li>
-                    <i class="fa fa-check"></i> Building House
-                  </li>
-                  <li>
-                    <i class="fa fa-check"></i> Reparing of Residentail Roof
-                  </li>
-                  <li>
-                    <i class="fa fa-check"></i> Renovaion of Commercial Office
-                  </li>
-                  <li>
-                    <i class="fa fa-check"></i> Make Quality Products
-                  </li>
-                </ul>
+         
               </div>
             </div>
           </div>
+          
           <!-- End col-->
         </div>
-
+        
+      <div class="row" data-aos="fade-up">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="section-headline text-center">
+              <h2>Contactez-Nous</h2>
+            </div>
+          </div>
+        </div>
+        <div id="contact-form" class="contact-form">
+		<form class="form"  @submit.prevent="addContact()">
+			<input required name="name" v-model="form.name" placeholder="Name" type="text"  autocomplete="off" required>
+			<input required name="email" v-model="form.email" placeholder="E-mail" type="email" autocomplete="off" required>
+			<textarea name="message" v-model="form.message" rows="4" placeholder="Message"></textarea>
+		   <button type="submit" class="button">Envoyer</button>
+		</form>
+	</div>
       </div>
 
     </div>
@@ -150,7 +103,35 @@
 //import { KinesisContainer, KinesisElement} from 'vue-kinesis'
     export default {
         name: "PublicHome",
+          data() {
+        name:"ajouter"
+         return {
+             
+             form: new Form({
+                    name:'',
+                    email: '',
+                    message: '',
+                    
+
+             })
+         }
+    },
         methods:{
+            addContact(){
+                this.form.post('/addContact')
+                .then((response)=>{
+                //afficheCategory()
+                //this.$Progress.finish();
+                //this.$router.push('/Listcategory');// routeur a la page des list des catagorie
+                toast.fire({
+                icon: 'success',
+                title: 'Votre message a ete envoye'
+                })
+                })
+                .catch(()=>{
+                 //this.$Progress.fail();
+                })
+            },
             test($ville){
                  this.$router.push(`/articleofVille/${$ville}`);
             },
@@ -170,6 +151,66 @@ body {
 button {
 	font-family: 'Poppins', sans-serif;
 }
+.contact-form {
+	font-family: 16px;
+	margin: 0 auto;
+	max-width: 600px;
+	width: 100%;
+}
+
+.contact-form .separator {
+	border-bottom: solid 1px #ccc;
+	margin-bottom: 15px;
+}
+
+.contact-form .form {
+	display: flex;
+	flex-direction: column;
+	font-size: 16px;
+}
+
+.contact-form_title {
+	color: #333;
+	text-align: left;
+	font-size: 28px;
+}
+
+.contact-form input[type="email"],
+.contact-form input[type="text"],
+.contact-form textarea {
+	border: solid 1px #e8e8e8;
+	font-family: 'Roboto', sans-serif;
+	padding: 10px 7px;
+	margin-bottom: 15px;
+	outline: none;
+}
+
+.contact-form textarea {
+	resize: none;
+}
+
+.contact-form .button {
+	background: #da552f;
+	border: solid 1px #da552f;
+	color: white;
+	cursor: pointer;
+	padding: 10px 50px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.contact-form .button:hover {
+	background: #ea532a;
+	border: solid 1px #ea532a;
+}
+
+.contact-form input[type="email"],
+.contact-form input[type="text"],
+.contact-form textarea,
+.contact-form .button {
+	font-size: 15px;
+	border-radius: 3px
+}
 
 header {
 	display: flex;
@@ -178,7 +219,25 @@ header {
 	margin: auto;
 	align-items: center;
 }
-
+#des{
+    padding: 230px 10px;
+    
+    background-image:url(https://picsum.photos/200/300/?blur);
+    background-position: center center;
+    background-size: cover; 
+    /* opacity:20; */
+    
+    background-blend-mode: lighten;
+}
+ 
+.title1{
+    margin: 30px 85px;
+    font-size: 70px;
+     line-height: 90px; 
+    /* display: flex; */
+    /* align-items: center; */
+    color:whitesmoke;
+}
 .logo-container,
 .nav-links,
 .cart {

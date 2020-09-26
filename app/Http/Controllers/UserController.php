@@ -59,6 +59,7 @@ class UserController extends Controller
       public function update_user(Request $request, $id){
         $this->validate($request,[
             'name' => 'required|string',
+            'telephone' => 'required|string',
             'email' => 'required|string|email|max:191|unique:users',
             'password' => 'required|string|min:6'
         ]);
@@ -66,6 +67,7 @@ class UserController extends Controller
         $user->name = $request->name;
         $user->email = $request->email;
         $user->Grade = $request->Grade;
+        $user->telephone = $request->telephone;
         $user->password = Hash::make($request['password']);
         $user->save();
     }

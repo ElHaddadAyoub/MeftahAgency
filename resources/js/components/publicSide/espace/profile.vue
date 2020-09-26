@@ -22,24 +22,24 @@
               <div class="widget-user-image">
                 <img class="img-circle"  :src="GetPhoto(tt.photo)" alt="User Avatar">
               </div>
-              <div class="card-footer">
+              <!-- <div class="card-footer">
                 <div class="row">
                   <div class="col-sm-4 border-right">
                     <div class="description-block">
                       <h5 class="description-header">3,200</h5>
                       <span class="description-text">SALES</span>
                     </div>
-                    <!-- /.description-block -->
+                    
                   </div>
-                  <!-- /.col -->
+                 
                   <div class="col-sm-4 border-right">
                     <div class="description-block">
                       <h5 class="description-header">13,000</h5>
                       <span class="description-text">FOLLOWERS</span>
                     </div>
-                    <!-- /.description-block -->
+                  
                   </div>
-                  <!-- /.col -->
+                 
                   <div class="col-sm-4">
                     <div class="description-block">
                       <h5 class="description-header">35</h5>
@@ -47,7 +47,7 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
             </div>
           </div>
            <div class="col-md-12">
@@ -73,10 +73,16 @@
             <form role="form" enctype="multipart/form-data" @submit.prevent="updateProfile()">
             <div class="card-body">
             <div class="form-group">
-            <label for="postId">Name </label>
+            <label for="postId">nom complet : </label>
             <input type="text" class="form-control" id=""  v-model="form.name" name="name" :class="{ 'is-invalid': form.errors.has('name') }">
             <has-error :form="form" field="name"></has-error>
             </div>
+              <div class="form-group">
+            <label for="postId">telephone : </label>
+            <input type="text" class="form-control" id=""  v-model="form.telephone" name="telephone" :class="{ 'is-invalid': form.errors.has('telephone') }">
+            <has-error :form="form" field="telephone"></has-error>
+            </div>
+            
             <div class="form-group">
             <label for="descriptionId">Email</label>
 
@@ -103,7 +109,7 @@
             <!-- /.card-body -->
 
             <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Update</button>
+            <button type="submit" class="btn btn-primary">Editer</button>
             </div>
             </form>
 
@@ -136,8 +142,13 @@ export default {
          }
     },
      mounted() {
-            //this.getAllInfos();
-           this.$store.dispatch('getUserProfile');
+            this.getAllInfos();
+            this.form.fill(response.data.getAllInfos);
+            // axios.get(`/edituser/${this.$route.params.categoryid}`)
+            // .then((response)=>{
+            //     this.form.fill(response.data.user)//had category lihna jaya mn lif controller fossst json
+            // })
+           //this.$store.dispatch('getUserProfile');
            /* axios.get('/editProfile')
            .then((response)=>{
                this.form.fill(response.data.profile)
@@ -186,7 +197,7 @@ export default {
                 this.$router.push('/EspaceUser');// routeur a la page des list des catagorie
                 toast.fire({
                     icon: 'success',
-                    title: 'User Profile updated successfully'
+                    title: 'les information sont edité avec success '
                 })
             })
             .catch(()=>{
